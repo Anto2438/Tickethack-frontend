@@ -29,6 +29,7 @@ fetch("http://localhost:3000/carts")
         itemDiv.appendChild(tripHour);
 
         const tripPrice = document.createElement("div");
+        tripPrice.setAttribute("class", "prices")
         tripPrice.textContent = `${elem.tripId.price}€`;
         itemDiv.appendChild(tripPrice);
 
@@ -39,6 +40,27 @@ fetch("http://localhost:3000/carts")
 
         deleteBtn.addEventListener("click", (event) => {
           const cartId = event.target.getAttribute("data-id");
+          const allTrips = document.querySelectorAll('.prices')
+          const currentPrice = event.target.textContent
+          console.log("TCL: ", )
+          // allTrips.forEach(trip => {
+          //   console.log(trip.textContent)
+
+          // });
+          let prices = []
+          let total = 0;
+          for (let i = 0; i < allTrips.length; i++) {
+            prices.push(allTrips[i].textContent)
+
+          }
+          console.log(prices)
+          total = prices.reduce(
+            (sum, elem) => sum + parseInt(elem),
+            0
+          );
+          totalPriceText.textContent = total
+          
+          console.log(total)
           fetch(`http://localhost:3000/carts/${cartId}`, {
             method: "DELETE",
           })
