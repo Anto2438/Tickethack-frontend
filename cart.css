@@ -52,7 +52,7 @@ main {
     color: white;
     background-color: #00153E;
     margin-bottom: -10px;
-    display: none;
+    display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom-left-radius: 8px;
@@ -76,4 +76,26 @@ main {
     color: white;
     border-radius: 4px;
     margin-right: 25px;
+}
+
+#cart-items {
+    width: 100%;
+  
+}
+
+.item {
+    display: grid;
+    grid-template-columns: 1.8fr 1.1fr 1fr 0.1fr;
+    margin: 15px;
+    padding: 15px;
+    background-color: #F5EEEE;
+}
+
+.delete-btn {
+    display: flex;
+    justify-content: center;
+    padding: 3px 10px;
+    background-color: #459E85;
+    border-radius: 4px;
+    cursor: pointer;
 }
