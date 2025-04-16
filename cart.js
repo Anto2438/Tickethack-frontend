@@ -7,8 +7,8 @@ fetch("http://localhost:3000/carts")
   .then((response) => response.json())
   .then((data) => {
     console.log(data);
-    if (data.result ===true) {
-      if (defaultCart) {defaultCart.style.display = "none";}
+    if (data.result === true) {
+     defaultCart.style.display = "none";
       ifCartTitle.style.display = "flex";
 
       let totalPrice = data.data.reduce(
